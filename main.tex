@@ -7,49 +7,39 @@
 \graphicspath{ {images/} }
 \usepackage{multicol}
 
-
-
 % For designing only. Should be removed in production build.
 \usepackage{showframe}
+
+% To apply monospace font on none code section.
+\newenvironment{monospace}{\ttfamily}{\par}
+
 
 \begin{document}
   \noindent
   \begin{minipage}[t]{0.2\textwidth}
     \vspace{0pt}
-    \begin{flushleft}	
-    \includegraphics[width=\textwidth]{avatar}
+    \begin{flushleft}
+    \includegraphics[width=0.75\textwidth]{avatar}
     \end{flushleft}
   \end{minipage}
   \hspace{10pt}
-  %    
+  %
   \begin{minipage}[t]{0.5\textwidth}
     \vspace{3pt}
-    \begin{minted}{python}
-import numpy as np
+    \begin{minted}{text}
+888888    db    88     888888 88 888888 88b 88     88     888888
+  88     dPYb   88       88   88 88__   88Yb88     88     88__
+  88    dP__Yb  88       88   88 88""   88 Y88     88  .o 88""
+  88   dP""""Yb 88       88   88 888888 88  Y8     88ood8 888888
 
-def incmatrix(genl1,genl2):
-  n = len(genl2)
-  M = None #to become the incidence matrix
-  VT = np.zeros((n*m,1), int)  #dummy variable
-     \end{minted}
-  \end{minipage}
-  \hspace{10pt}
-  %
-  \begin{minipage}[t]{0.2\textwidth}
-    \vspace{0pt}
-    My contact info
-    \begin{enumerate}
-      \item Github
-      \item Twitter
-      \item LinkedIn
-      \item Web
-    \end{enumerate}
+A web developer who write fast, reusable, testable code.
+    \end{minted}
   \end{minipage}
 
 \vspace{10pt}
 \noindent
   \begin{minipage}[t]{0.6\textwidth}
-    \textbf{Git log experience here}
+    \section*{Work Experience}
     \begin{minted}{java}
 commit 2c24402358c1e80c98243117a09cbc27f22ec67e
 Author: Le Tien Tai <letientai299@gmail.com>
@@ -90,24 +80,36 @@ config/vimfx/config.js | 3 +++
 
 
     \end{minted}
-    
-    \textbf{Education}
-    
+
+    \section*{Education}
+
     HCMUS
     \ldots
   \end{minipage}
   %
   \begin{minipage}[t]{0.4\textwidth}
-    \textbf{Skills}
+    \section*{Contact}
+    \begin{enumerate}
+      \item Github
+      \item Twitter
+      \item LinkedIn
+      \item Web
+    \end{enumerate}
+    
+    
+    \section*{Skills and Competences}
     \begin{minted}{java}
 vim     | +++++++++++++++++++++
 java    | ++++++++++++++++++++
 js      | ++++++++++++++++++++
 android | +++++++++++++++++
     \end{minted}
-    \textbf{Achievements}
+    
+    
+    \section*{Achievements}
 
-    \textbf{Interests}
+    
+    \section*{Interests}
   \end{minipage}
 
 \end{document}
