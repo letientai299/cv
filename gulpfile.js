@@ -40,11 +40,8 @@ function make() {
   let latexmk = cp.spawn('latexmk', {
     cwd: 'dest'
   })
-  latexmk.stdout.on('data', function (data) {
-    data.toString().split('\r\n')
-      .forEach(s => console.log('LaTeX - out|', s));
-  })
 
+  // Only care about error
   latexmk.stderr.on('data', function (data) {
     if (data.length !== 0) {
       console.error('LaTeX - err| ' + data.toString().trim());
