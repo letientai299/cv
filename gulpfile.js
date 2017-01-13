@@ -9,20 +9,32 @@ gulp.task('default', ['build']);
  */
 gulp.task('build', function () {
   let latexmk = cp.spawn('latexmk')
-  latexmk.stdio.on('data', function (data) {
-    console.log('stdout: ' + data);
+  latexmk.stdout.on('data', function (data) {
+    data.toString().split('\r\n')
+      .forEach(s => console.log('LaTeX - out|', s));
   })
+
   latexmk.stderr.on('data', function (data) {
-    console.error('stdout: ' + data);
+    if (data.length !== 0) {
+      console.error('LaTeX - err| ' + data.toString().trim());
+    }
   });
 });
 
 /**
- * Delete latexmk output folder.
+ * Delete latexmk and minted output folder.
  */
 gulp.task('clean', function () {
-  del('build/');
-  del('main.pdf');
+  del(['build/',
+  '_minted-*'
+  ]).then(paths => {
+    if (paths.length !== 0) {
+      console.log('Deleted files and folders:\n',
+        paths.forEach(s => s.trim()).join('\n'));
+    } else {
+      console.log('Alredy cleaned');
+    }
+  });;
 })
 
 /**
