@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const del = require('del')
 const cp = require('child_process');
+const debug = require('gulp-debug');
 
 gulp.task('default', ['build']);
 
@@ -17,24 +18,24 @@ gulp.task('build', function () {
  * Delete latexmk and minted output folder.
  */
 gulp.task('clean', function () {
-  del(['dest']).then(paths => {
-    if (paths.length !== 0) {
-      console.log('Deleted files and folders:\n',
-        paths.forEach(s => s.trim()).join('\n'));
-    } else {
-      console.log('Alredy cleaned');
-    }
-  });;
+  del(['dest']);
 })
 
 /**
  * Spawn the pdf viewer and recompile whenever *.tex file change.
  */
 gulp.task('serve', ['build'], function () {
-  // spawn pdf viewer
-  gulp.watch('src/**/*', ['build']);
+  gulp.watch('src/**/*').on('change', e => {
+    gulp.src(e.path)
+      .pipe(debug())
+      .pipe(gulp.dest('dest'))
+      .on('end', make);
+  })
 });
 
+/**
+ * Run latexmk
+ */
 function make() {
   let latexmk = cp.spawn('latexmk', {
     cwd: 'dest'
