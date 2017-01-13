@@ -9,3 +9,5 @@ $pdf_mode = 1;        # tex -> pdf
 # for code highlighting using minted
 $latex = 'latex -src -interaction=nonstopmode -shell-escape';
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode -shell-escape';
+
+$aux_dir=build

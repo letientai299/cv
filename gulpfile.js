@@ -8,14 +8,21 @@ gulp.task('default', ['build']);
  * Call latexmk to build the file.
  */
 gulp.task('build', function () {
-  cp.spawn('latexmk');
+  let latexmk = cp.spawn('latexmk')
+  latexmk.stdio.on('data', function (data) {
+    console.log('stdout: ' + data);
+  })
+  latexmk.stderr.on('data', function (data) {
+    console.error('stdout: ' + data);
+  });
 });
 
 /**
  * Delete latexmk output folder.
  */
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   del('build/');
+  del('main.pdf');
 })
 
 /**

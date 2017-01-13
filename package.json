@@ -6,6 +6,9 @@
   "repository": "https://letientai299@github.com/letientai299/cv.git",
   "author": "Le Tien Tai <letientai299@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1"
