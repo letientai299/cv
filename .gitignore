@@ -3,3 +3,5 @@
 *.log
 *.synctex.gz
 _minted-*/
+*.fls
+*.fdb_latexmk

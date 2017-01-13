@@ -1,0 +1,13 @@
+{
+  "name": "letientai299-cv",
+  "version": "1.0.0",
+  "description": "My resume, build with LaTeX",
+  "main": "gulpfile.js",
+  "repository": "https://letientai299@github.com/letientai299/cv.git",
+  "author": "Le Tien Tai <letientai299@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1"
+  }
+}
