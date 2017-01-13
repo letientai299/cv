@@ -25,6 +25,8 @@ gulp.task('clean', function () {
  * Spawn the pdf viewer and recompile whenever *.tex file change.
  */
 gulp.task('serve', ['build'], function () {
+  open('dest/main.pdf');
+
   gulp.watch('src/**/*').on('change', e => {
     gulp.src(e.path)
       .pipe(debug())
@@ -33,18 +35,16 @@ gulp.task('serve', ['build'], function () {
   })
 });
 
-/**
- * Run latexmk
- */
 function make() {
-  let latexmk = cp.spawn('latexmk', {
+  return cp.spawn('latexmk', {
     cwd: 'dest'
   })
+}
 
-  // Only care about error
-  latexmk.stderr.on('data', function (data) {
-    if (data.length !== 0) {
-      console.error('LaTeX - err| ' + data.toString().trim());
-    }
-  });
+function open(pdfFile){
+  let command = process.platform.match('win.*') ?
+    "start" : "xdg-open";
+  let execCommand = `${command} ${pdfFile}`;
+  // console.log(execCommand);
+  return cp.exec(execCommand);
 }
