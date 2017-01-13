@@ -8,11 +8,10 @@
 \usepackage{multicol}
 
 % For designing only. Should be removed in production build.
-\usepackage{showframe}
+% \usepackage{showframe}
 
 % To apply monospace font on none code section.
 \newenvironment{monospace}{\ttfamily}{\par}
-
 
 \begin{document}
   \noindent
@@ -25,91 +24,22 @@
   \hspace{10pt}
   %
   \begin{minipage}[t]{0.5\textwidth}
-    \vspace{3pt}
-    \begin{minted}{text}
-888888    db    88     888888 88 888888 88b 88     88     888888
-  88     dPYb   88       88   88 88__   88Yb88     88     88__
-  88    dP__Yb  88       88   88 88""   88 Y88     88  .o 88""
-  88   dP""""Yb 88       88   88 888888 88  Y8     88ood8 888888
-
-A web developer who write fast, reusable, testable code.
-    \end{minted}
+   \vspace{3pt}
+   \input{intro}
   \end{minipage}
 
 \vspace{10pt}
 \noindent
   \begin{minipage}[t]{0.6\textwidth}
-    \section*{Work Experience}
-    \begin{minted}{java}
-commit 2c24402358c1e80c98243117a09cbc27f22ec67e
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Mon Jan 9 22:53:03 2017 +0700
-
-Shortcut for notes
-
-config/vimfx/config.js | 1 +
-1 file changed, 1 insertion(+)
-
-commit 449350a85068e70fe4940c89a4cbbaa01f5c1c35
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Mon Jan 9 22:49:33 2017 +0700
-
-Disable tagbar
-
-vim/after/plugin/{tagbar.vim => tagbar.vim.bk} | 0
-vim/plugins.vim                                | 2 +-
-2 files changed, 1 insertion(+), 1 deletion(-)
-
-commit 84fa0bca807c03de29563f6fd0f5da6e8d00fe5c
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Sun Jan 8 19:58:31 2017 +0700
-
-Add shortcuts to inc/desc last number in url
-
-config/vimfx/config.js | 33 +++++++++++++++++++
-1 file changed, 33 insertions(+)
-
-commit 48fa61181fc1342bde3a14edee7b992f30f03b43
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Sun Jan 8 19:42:38 2017 +0700
-
-Add shortcuts for some more sites
-
-config/vimfx/config.js | 3 +++
-1 file changed, 3 insertions(+)
-
-
-    \end{minted}
-
-    \section*{Education}
-
-    HCMUS
-    \ldots
+    \input{experience}
+    \input{education}
   \end{minipage}
   %
   \begin{minipage}[t]{0.4\textwidth}
-    \section*{Contact}
-    \begin{enumerate}
-      \item Github
-      \item Twitter
-      \item LinkedIn
-      \item Web
-    \end{enumerate}
-    
-    
-    \section*{Skills and Competences}
-    \begin{minted}{java}
-vim     | +++++++++++++++++++++
-java    | ++++++++++++++++++++
-js      | ++++++++++++++++++++
-android | +++++++++++++++++
-    \end{minted}
-    
-    
-    \section*{Achievements}
-
-    
-    \section*{Interests}
+    \input{skills}
+    \input{achievements}
+    \input{interests}
+    \input{contact}
   \end{minipage}
 
 \end{document}
