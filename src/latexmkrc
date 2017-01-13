@@ -10,4 +10,4 @@ $pdf_mode = 1;        # tex -> pdf
 $latex = 'latex -src -interaction=nonstopmode -shell-escape';
 $pdflatex = 'pdflatex -synctex=1 -interaction=nonstopmode -shell-escape';
 
-$out_dir='build'
+#$out_dir='build'

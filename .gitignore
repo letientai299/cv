@@ -1,8 +1,1 @@
-*.pdf
-*.aux
-*.log
-*.synctex.gz
-_minted-*/
-build/
-*.fls
-*.fdb_latexmk
+dest/
