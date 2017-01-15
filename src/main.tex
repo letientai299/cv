@@ -9,8 +9,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 
+\usepackage{svg}
 \usepackage{graphicx}
-\graphicspath{ {images/} }
+% \graphicspath{ {images/} }
 
 % TODO check and romve all the unused packages.
 
@@ -46,19 +47,20 @@
   \vspace{0pt}
   \input{avatar}
 \end{minipage}
-\hspace{10pt}
+\vspace{10pt}
 %
 \begin{minipage}[t]{0.5\textwidth}
   \vspace{3pt}
   \input{intro}
 \end{minipage}
-\hspace{10pt}
 %
 \begin{minipage}[t]{0.3\textwidth}
   \vspace{3pt}
+  \begin{flushright}
   \input{contact}
+  \end{flushright}
 \end{minipage}
-
+%
 \vspace{10pt}
 \noindent
 \begin{minipage}[t]{0.6\textwidth}

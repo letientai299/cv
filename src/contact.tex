@@ -1,7 +1,17 @@
-\begin{enumerate}
-  \item \href{https://github.com/letientai299}{Github}
-  \item \href{https://twitter.com/letientai299}{Twitter}
-% TODO remove the blog, if I could include any of the writing in the CV.
-  \item \href{https://letientai299.github.io}{Blog}
-  \item \href{mailto:letientai299@gmail.com}{letientai299@gmail.com}
-\end{enumerate}
+{ % Scoped.
+  \newcommand{\icon}[1]{%
+    \includesvg[width=0.5cm]{#1}%
+  }
+
+  \begin{tabular}{@{}r@{\hskip5pt} l @{}}
+    \href{https://github.com/letientai299}{Github} & \icon{github}\\
+    \hline
+    \href{https://twitter.com/letientai299}{Twitter} & \icon{twitter} \\
+    \hline
+    % TODO remove the blog, if I could include any of the writing in the CV.
+    \href{https://letientai299.github.io}{Blog} & \icon{text} \\
+    \hline
+    \href{mailto:letientai299@gmail.com}{letientai299@gmail.com} & \icon{mail}\\
+    \hline
+  \end{tabular}
+}
