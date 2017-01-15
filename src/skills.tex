@@ -1,7 +1,17 @@
 \section*{Skills and Competences}
-\begin{minted}{java}
-vim     | +++++++++++++++++++++
-java    | ++++++++++++++++++++
-js      | ++++++++++++++++++++
-android | ++++++++++++++++
-\end{minted}
+% Define a new command to draw a line in skill table.
+% Args:
+% - Skill name: text
+% - Skill level: int, from 0-100 (%)
+\newcommand{\skill}[2]{%
+  #1 & #2 \\ %
+}
+
+\begin{tabular*}{\textwidth}{r l}
+  \skill{vim}{70}
+  \skill{java}{90}
+  \skill{nodejs}{60}
+  \skill{C++}{60}
+  \skill{typing}{90}
+  \skill{android}{80}
+\end{tabular*}

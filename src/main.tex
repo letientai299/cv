@@ -1,19 +1,21 @@
 \documentclass[a4paper]{article}
+
+% To reduce the print margin. In this one page CV, space is invaluable.
 \usepackage[margin=0.8in]{geometry}
-\usepackage{graphicx}
+
 \usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{minted}
-\graphicspath{ {images/} }
-\usepackage{multicol}
-\usepackage{xcolor}
 \usepackage{hyperref}
 
-% For designing only. Should be removed in production build.
-% \usepackage{showframe}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 
-% To apply monospace font on none code section.
-\newenvironment{monospace}{\ttfamily}{\par}
+% TODO check and romve all the unused packages.
+
+% Code highlighting
+\usepackage{minted}
+
+% TODO For designing only. Should be removed in production build.
+% \usepackage{showframe}
 
 \begin{document}
   \noindent
