@@ -1,16 +1,18 @@
 { % Scoped.
   \newcommand{\icon}[1]{%
-    \raisebox{-0.3\height}{\includesvg[width=0.6cm]{#1}}
+    \raisebox{-0.2\height}{\includesvg[width=0.4cm]{#1}}
   }
+
+  % increase margin between rows
+  \def\arraystretch{1.5}
 
   \begin{tabular}{
       @{} >{\centering\arraybackslash} r @{\hskip5pt}
        >{\centering\arraybackslash} l @{}
     }
-    \href{https://github.com/letientai299}{Github} & \icon{github}\\
-    \href{https://twitter.com/letientai299}{Twitter} & \icon{twitter} \\
-    % TODO remove the blog, if I could include any of the writing in the CV.
-    \href{https://letientai299.github.io}{Blog} & \icon{text} \\
+    \href{https://github.com/letientai299}{github.com/letientai299} & \icon{github}\\
+    \href{https://letientai299.github.io}{letientai299.github.io} & \icon{text} \\
     \href{mailto:letientai299@gmail.com}{letientai299@gmail.com} & \icon{mail}\\
+    \href{tel:841638313270}{(+84)163-831-3270} & \icon{phone}\\
   \end{tabular}
 }
