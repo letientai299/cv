@@ -1,17 +1,35 @@
 \section*{Skills and Competences}
-% Define a new command to draw a line in skill table.
-% Args:
-% - Skill name: text
-% - Skill level: int, from 0-100 (%)
-\newcommand{\skill}[2]{%
-  #1 & #2 \\ %
-}
+{ % Scoped. Make below config, commands only available for this section
 
-\begin{tabular*}{\textwidth}{r l}
-  \skill{vim}{70}
-  \skill{java}{90}
-  \skill{nodejs}{60}
-  \skill{C++}{60}
-  \skill{typing}{90}
-  \skill{android}{80}
-\end{tabular*}
+  \newcommand{\skillNaneWidthPercentage}{0.3}
+
+  % Define a command to draw a rectangle which width is calculate to given
+  % percentage of minipage width
+  \newcommand{\horizontalBox}[1]{%
+    \FPeval{\w}{clip(#1 / 100 * (1-\skillNaneWidthPercentage))}
+    \fbox{\vphantom{0}\hspace{\w\textwidth}}
+  }
+
+  % Define a new command to draw a line in skill table.
+  % Args:
+  % - Skill name: text
+  % - Skill level: int, from 0-100 (%)
+  \newcommand{\skill}[2]{%
+    #1 & \horizontalBox{#2} \\
+  }
+
+  % increase margin between rows
+  \def\arraystretch{1.5}
+
+  \begin{tabular*}{\linewitdth}{
+      @{}>{\raggedleft}p{\skillNaneWidthPercentage\linewidth-2\tabcolsep}@{}
+      % without \arraybackslash, \\ won't end the row
+      @{}>{\raggedright\arraybackslash}l@{}
+    }
+    \skill{java}{100}
+    \skill{nodejs}{25}
+    \skill{C++}{50}
+    \skill{android development}{80}
+    \skill{linux command line}{80}
+  \end{tabular*}
+}
