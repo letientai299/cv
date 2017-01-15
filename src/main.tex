@@ -25,32 +25,35 @@
 \usepackage{array}
 
 \begin{document}
-  \noindent
-  \begin{minipage}[t]{0.2\textwidth}
-    \vspace{0pt}
-    \begin{flushleft}
-    \includegraphics[width=0.75\textwidth]{avatar}
-    \end{flushleft}
-  \end{minipage}
-  \hspace{10pt}
-  %
-  \begin{minipage}[t]{0.7\textwidth}
-   \vspace{3pt}
-   \input{intro}
-  \end{minipage}
+\noindent
+\begin{minipage}[t]{0.2\textwidth}
+  \vspace{0pt}
+  \input{avatar}
+\end{minipage}
+\hspace{10pt}
+%
+\begin{minipage}[t]{0.5\textwidth}
+  \vspace{3pt}
+  \input{intro}
+\end{minipage}
+\hspace{10pt}
+%
+\begin{minipage}[t]{0.3\textwidth}
+  \vspace{3pt}
+  \input{contact}
+\end{minipage}
 
 \vspace{10pt}
 \noindent
-  \begin{minipage}[t]{0.6\textwidth}
-    \input{experience}
-    \input{education}
-  \end{minipage}
-  %
-  \begin{minipage}[t]{0.4\textwidth}
-    \input{skills}
-    \input{achievements}
-    \input{interests}
-    \input{contact}
-  \end{minipage}
+\begin{minipage}[t]{0.6\textwidth}
+  \input{experience}
+  \input{education}
+\end{minipage}
+%
+\begin{minipage}[t]{0.4\textwidth}
+  \input{skills}
+  \input{achievements}
+  \input{interests}
+\end{minipage}
 
 \end{document}
