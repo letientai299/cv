@@ -101,7 +101,7 @@ function generateColorTheme(cb) {
   removeSvgTempFileSync();
 
   // Change svg fill color.
-  gulp.src('src/*.svg')
+  gulp.src('src/images/*.svg')
     .pipe(replace(/fill:#[0-9a-fA-F]{6}/, `fill:${theme.primaryColor}`))
     .pipe(gulp.dest('dest'))
     .on('end', () => writeNewColorTexFile(theme, cb));
