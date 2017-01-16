@@ -1,10 +1,10 @@
 {
-  "useTheme": "dark",
+  "useTheme": "light",
   "themes": {
     "light": {
       "backgroundColor": "#ffffff",
       "textColor": "#000000",
-      "primaryColor": "#0000ff"
+      "primaryColor": "#dd0f00"
     },
     "dark": {
       "backgroundColor": "#303030",
