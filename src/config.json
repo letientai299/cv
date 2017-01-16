@@ -1,13 +1,15 @@
 {
-  "theme": {
-    "backgroundColor": "#ffffff",
-    "textColor": "#000000",
-    "primaryColor": "#0000ff"
-  },
-
-  "light": {
-    "backgroundColor": "#303030",
-    "textColor": "#efefef",
-    "primaryColor": "#00eeee"
+  "useTheme": "dark",
+  "themes": {
+    "light": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#000000",
+      "primaryColor": "#0000ff"
+    },
+    "dark": {
+      "backgroundColor": "#303030",
+      "textColor": "#efefef",
+      "primaryColor": "#00eeee"
+    }
   }
 }

@@ -91,7 +91,8 @@ function open(pdfFile) {
  */
 function generateColorTheme(cb) {
   let config = JSON.parse(fs.readFileSync('./src/config.json', 'utf8'));
-  let theme = config.theme;
+  let themeName = config.useTheme;
+  let theme = config.themes[themeName];
 
   if (cb == null) {
     cb = () => {} ;// no-op
