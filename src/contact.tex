@@ -3,6 +3,16 @@
     \raisebox{-0.2\height}{\includesvg[width=0.4cm]{#1}}
   }
 
+  % Add one more row into the below contact table.
+  % The row contains 2 text and icon.
+  % Args:
+  % - #1: The link
+  % - #2: Text to display
+  % - #3: Icon
+  \newcommand{\contactLink}[3]{%
+     \href{#1}{#2} & \href{#1}{\icon{#3}}\\
+  }
+
   % increase margin between rows
   \def\arraystretch{1.5}
 
@@ -10,9 +20,9 @@
       @{} >{\centering\arraybackslash} r @{\hskip5pt}
        >{\centering\arraybackslash} l @{}
     }
-    \href{https://github.com/letientai299}{github.com/letientai299} & \icon{github}\\
-    \href{https://letientai299.github.io}{letientai299.github.io} & \icon{web}\\
-    \href{mailto:letientai299@gmail.com}{letientai299@gmail.com} & \icon{mail}\\
-    \href{tel:841638313270}{(+84)163-831-3270} & \icon{phone}\\
+    \contactLink{https://github.com/letientai299}{https://github.com/letientai299}{github}
+    \contactLink{https://letientai299.github.io}{https://letientai299.github.io}{web}
+    \contactLink{mailto:letientai299@gmail.com}{letientai299@gmail.com}{mail}
+    \contactLink{tel:841638313270}{(+84)163-831-3270}{phone}
   \end{tabular}
 }
