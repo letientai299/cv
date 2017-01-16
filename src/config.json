@@ -1,11 +1,11 @@
 {
-  "light": {
+  "theme": {
     "backgroundColor": "#ffffff",
     "textColor": "#000000",
     "primaryColor": "#0000ff"
   },
 
-  "theme": {
+  "light": {
     "backgroundColor": "#303030",
     "textColor": "#efefef",
     "primaryColor": "#00eeee"
