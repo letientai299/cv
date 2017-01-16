@@ -1,13 +1,16 @@
 \section*{Skills and Competences}
 { % Scoped. Make below config, commands only available for this section
 
-  \newcommand{\skillNaneWidthPercentage}{0.3}
+  % Constants
+  \newcommand{\skillNaneWidthPercentage}{0.25}
+  \newcommand{\expertLevel}{100}
+  \newcommand{\getJobDoneLevel}{50} % Am I too optimistic?
 
   % Define a command to draw a rectangle which width is calculate to given
   % percentage of minipage width
   \newcommand{\horizontalBox}[1]{%
     \FPeval{\w}{clip(#1 / 100 * (1-\skillNaneWidthPercentage))}
-    \fbox{\vphantom{0}\hspace{\w\textwidth}}
+    \colorbox{primaryColor}{\vphantom{0}\hspace{\w\textwidth}}
   }
 
   % Define a new command to draw a line in skill table.
@@ -15,7 +18,7 @@
   % - Skill name: text
   % - Skill level: int, from 0-100 (%)
   \newcommand{\skill}[2]{%
-    #1 & \horizontalBox{#2} \\
+  #1 & \horizontalBox{#2} \\
   }
 
   % increase margin between rows
@@ -26,9 +29,30 @@
       % without \arraybackslash, \\ won't end the row
       @{}>{\raggedright\arraybackslash}l@{}
     }
-    \skill{Java}{100}
-    \skill{Nodejs}{25}
-    \skill{C++}{50}
-    \skill{Android}{80}
+
+    % Draw the expert level indicator
+    % Random thoughts: the indicator point to 95% (as per above computation)
+    % I could find some trick to force it point to 100%. But I think no one could
+    % claim that they understand 100% on any skills, so, 95% is fine.
+    & \FPeval{\w}{clip(\expertLevel /100 * (1-\skillNaneWidthPercentage))}%
+      \begin{tabular}{@{}>{\raggedleft}p{\w\linewidth}|} %
+       \arrayrulecolor{primaryColor}
+       \textit{Expert}
+      \end{tabular} \\
+
+    % List of skills with level percentage
+    \skill{Java}{85}
+    \skill{Android}{75}
+    \skill{Node.js}{65}
+    \skill{Web}{80}
+
+    % Draw the get job done indicator
+    & \FPeval{\w}{clip(\getJobDoneLevel /100  * (1-\skillNaneWidthPercentage))}%
+      \begin{tabular}{
+        @{}p{\w\linewidth + 2\tabcolsep}@{}|l@{}
+        }%
+        \arrayrulecolor{primaryColor}
+        & \textit{Get it done}
+      \end{tabular}
   \end{tabular*}
 }
