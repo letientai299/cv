@@ -9,7 +9,6 @@
     \node[clabel] {\phantom{#1::} #2};
   }
 
-
   \newcommand{\ghost}[1]{
     \coordinate (#1);
   }
@@ -37,16 +36,7 @@
 
     \matrix[column sep={1em,between origins}, row sep=\lineskip]
     {
-      \commit{d764b48}{\event{Bosch}{2016}{
-          Fuck yeah\\
-          I got multi line text\\
-          I got multi line text\\
-          I got multi line text\\
-          I got multi line text\\
-          I got multi line text
-          \bigbreak
-        }
-      } & \\
+      \commit{d764b48}{Fuck yeah} & \\
       \commit{54ba4b2}{release 2014-01-25} & \\
       \commitGhost{54ba4b2}{release 2014-01-25} & \\
       \commitGhost{54ba4b2}{release 2014-01-25} & \\

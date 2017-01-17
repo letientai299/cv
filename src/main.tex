@@ -1,10 +1,10 @@
-\documentclass[a4paper]{article}
+\documentclass[11pt]{report}
 
 %-------------------------------------------------------------------------------
 % Packages
 
 % To reduce the print margin. In this one page CV, space is invaluable.
-\usepackage[margin=0.6in]{geometry}
+\usepackage[margin=0.8in]{geometry}
 
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -22,6 +22,7 @@
 
 % Compute width
 \usepackage{calc}
+
 % Arithmetic computing
 \usepackage{fp}
 
@@ -65,7 +66,7 @@
 \end{minipage}
 \vspace{10pt}
 %
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[t]{0.46\textwidth}
   \vspace{3pt}
   \input{intro}
 \end{minipage}
@@ -77,7 +78,10 @@
   \end{flushright}
 \end{minipage}
 %
-\textcolor{primaryColor}{\hline}
+\begin{center}
+  \textcolor{primaryColor}{\rule{0.75\textwidth}{0.5pt}}
+\end{center}
+%
 \vspace{10pt}
 \noindent
 \begin{minipage}[t]{0.6\textwidth-15pt}
