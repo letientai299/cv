@@ -1,21 +1,44 @@
 \section*{Experience}
 {%
-  \newcommand{\commitIconsize}{5pt}
-  \newcommand{\commit}[2]{
+
+  % Next time update CV, I'll write to script to auto-gen below content.
+  % Credit to Paul Gessler for the oginal code, which the below code is based connect
+  % http://tex.stackexchange.com/questions/125244/how-can-i-produce-the-history-graph-of-a-git-repository-in-latex/156501#156501
+
+  % Define the header of a project
+  % Args:
+  % - #1: project code name. This won't be shown on the pdf, just use for making
+  %   tikz node anchor.
+  % - #2: Project name.
+  % - #3: Project timeline.
+  \newcommand{\commitHeader}[3]{
     \node[commit] (#1) {};
-    \node[clabel] at (#1) {{\texttt #1}: #2};
-  }
-  \newcommand{\commitGhost}[2]{
-    \node[clabel] {\phantom{#1::} #2};
-  }
-
-  \newcommand{\ghost}[1]{
-    \coordinate (#1);
+    \node[message] at (#1_header) {%
+      \textcolor{primaryColor}{#2 \hfill #3}
+    };
   }
 
+  % Alias
+  \newcommand{\chead}{\commitHeader}
+
+  % The commit mesage bodyto add more infomation about the project.
+  % This is a hack. I need to align the top of 2 tikz nodes, but I don't know
+  % how. So, I have to splits the commit body into multiple lines.
+  \newcommand{\commitBody}[1]{
+    \node[message] {#1};
+  }
+
+  % Alias
+  \newcommand{\cbody}{\commitBody}
+
+  % Draw a line between 2 commit points
   \newcommand{\connect}[2]{
     \path (#1) to[out=90,in=-90] (#2);
   }
+
+  \begin{minted}{text}
+> git log --grep="notable works" --graph
+  \end{minted}
 
   \begin{tikzpicture}
 
@@ -24,37 +47,96 @@
     circle,
     fill=primaryColor,
     inner sep=0pt,
-    minimum size=\commitIconsize
+    minimum size=7pt
     ]
 
-    \tikzstyle{clabel}=[
+    \tikzstyle{message}=[
     anchor=south,
-    right,outer sep=1em, text width=0.95\textwidth
+    right,
+    outer sep=1em,
+    text width=0.9\textwidth
     ]
 
     \tikzstyle{every path}=[draw]
 
-    \matrix[column sep={1em,between origins}, row sep=\lineskip]
+    \matrix[
+      column sep={1em,between origins},
+      row sep=\lineskip
+    ]
     {
-      \commit{d764b48}{Fuck yeah} & \\
-      \commit{54ba4b2}{release 2014-01-25} & \\
-      \commitGhost{54ba4b2}{release 2014-01-25} & \\
-      \commitGhost{54ba4b2}{release 2014-01-25} & \\
-      \commitGhost{54ba4b2}{release 2014-01-25} & \\
-      \commit{c589395}{Merge branch `master'} & \\
-      & \commit{9f9c652}{Remove holdover from kjh gh-pages branch} \\
-      \commit{b3bd158}{exclude font files} & \ghost{branch1} \\
-      \commit{63268c1}{micro-typography} & \\
+      \chead{SL}{SureLock App}{12/2016  - present} & \\
+      \cbody{%
+        - Build Android app to flash or upgrade chips firmware. \\
+        - Android NFC card emulation, RxJava
+      } & \\
+
+
+      \chead{MEC}{Master Energy Control System (MEC)}{11/2016 - present} & \\
+      \cbody{%
+        - MEC is a web interface to monitor and control boilers system.\\
+        - Migrate legacy code base on Flexigrid into Bootstrap-table. 
+        Reduce code size 25\% (50\% after minification)\\
+        - JQuery, Gulp.
+      } & \\
+
+
+      & \chead{JUP2}{JUP2 Automation Testing}{04/2016 - 07/2016} & \\
+      \cbody{%
+        - On-site in India\\
+        - Build an IDE-like tool to develop, execute script, generate report 
+        in HTML, Excel or Markdown.\\
+        - Use ScalaCheck for unit testing.\\
+        - Xtext, Xtend, Java, Scala.
+      } & \\
+
+
+      \chead{SysAdmin}{Internal Server Admininitration}{02/2016 - present} & \\
+      \cbody{%
+         - Setup and maintain an Ubuntu server that run Jira, Jenkins, 
+         SVN, Gerrit Code Review and Tomcat.\\
+         - Integrate Jira, Gerrit and Jenkins to support Continuous Integration.
+      } & \\
+
+      \chead{LC}{LeanCom Simulator}{10/2015 - 01/2015} & \\
+      \cbody{%
+        - Build a simulator to support testing LeanCom 
+        (COM port penetration tool using Lean protocol) while lacking of hardware.\\
+        - Java, Rxtx, Eclipse Rich Client Platform.
+      } & \\
+
+      \chead{SP}{Smart Presenter}{06/2015 - 10/2015} & \\
+      \cbody{%
+        - Control Powerpoint presentation using mobile device.\\
+        - Both Android and iOS are supported.\\
+        - Android, \cpp, Java.
+      } & \\
+
+
+      \chead{DSE}{Driving Style Evaluation (DSE)}{01/2015 - 07/2015} & \\
+      \cbody{%
+        - Build an Android app that tracks vehicle statistic (energy, speed, etc), 
+        analyses and provides suggestions for more effective and safer driving. \\
+        - Convert Matlab lib into \cpp{} lib that's used in Android and iOS apps.\\
+        - Android NDK, \cpp
+      } & \\
+
+      \chead{SA}{Smart Ads}{07/2014 - 11/2014} & \\
+      \cbody{%
+        - Mobile app uses Image Processing to detect Bosch product, 
+        then provide relevant information from Internet.\\
+        - Android NDK, \cpp, OpenCV
+      } & \\
     };
 
-    \connect{63268c1}{branch1};
-    \connect{branch1}{9f9c652};
-    \connect{b3bd158}{c589395};
-    \connect{9f9c652}{c589395};
-    \connect{c589395}{54ba4b2};
-    \connect{54ba4b2}{d764b48};
-    \connect{63268c1}{b3bd158};
-
+    % Draw the connection between nodes
+    \connect{MEC}{SL};
+    \connect{SysAdmin}{MEC};
+    \connect{JUP2}{MEC};
+    \connect{SysAdmin}{JUP2};
+    \connect{LC}{SysAdmin};
+    \connect{SP}{LC};
+    \connect{DSE}{SP};
+    \connect{SA}{DSE};
 
   \end{tikzpicture}
 }
