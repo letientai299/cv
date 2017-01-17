@@ -75,4 +75,4 @@ Shameless plug
 --------------
 
 I'm looking for a new job, willing to relocate. 
-If you are interesting, kindly drop me a line.
+If you're interested, kindly drop me a line.
