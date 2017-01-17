@@ -5,8 +5,8 @@ My CV, build with LaTeX and Gulp
 
 If you just want to read my CV, here are the PDF:
 
-- [Light theme](raw/master/dist/light.pdf), printer friendly.
-- [Dark theme](raw/master/dist/dark.pdf), for night owl like me.
+- [Light theme](./dist/light.pdf), printer friendly.
+- [Dark theme](./dist/dark.pdf), for night owl like me.
 
 
 Feature
