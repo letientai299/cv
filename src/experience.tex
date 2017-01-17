@@ -1,39 +1,70 @@
 \section*{Experience}
-\begin{minted}{java}
-commit 2c24402358c1e80c98243117a09cbc27f22ec67e
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Mon Jan 9 22:53:03 2017 +0700
+{%
+  \newcommand{\commitIconsize}{5pt}
+  \newcommand{\commit}[2]{
+    \node[commit] (#1) {};
+    \node[clabel] at (#1) {{\texttt #1}: #2};
+  }
+  \newcommand{\commitGhost}[2]{
+    \node[clabel] {\phantom{#1::} #2};
+  }
 
-Shortcut for notes
 
-config/vimfx/config.js | 1 +
-1 file changed, 1 insertion(+)
+  \newcommand{\ghost}[1]{
+    \coordinate (#1);
+  }
 
-commit 449350a85068e70fe4940c89a4cbbaa01f5c1c35
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Mon Jan 9 22:49:33 2017 +0700
+  \newcommand{\connect}[2]{
+    \path (#1) to[out=90,in=-90] (#2);
+  }
 
-Disable tagbar
+  \begin{tikzpicture}
 
-vim/after/plugin/{tagbar.vim => tagbar.vim.bk} | 0
-vim/plugins.vim                                | 2 +-
-2 files changed, 1 insertion(+), 1 deletion(-)
+    \tikzstyle{commit}=[
+    draw,
+    circle,
+    fill=primaryColor,
+    inner sep=0pt,
+    minimum size=\commitIconsize
+    ]
 
-commit 84fa0bca807c03de29563f6fd0f5da6e8d00fe5c
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Sun Jan 8 19:58:31 2017 +0700
+    \tikzstyle{clabel}=[
+    anchor=south,
+    right,outer sep=1em, text width=0.95\textwidth
+    ]
 
-Add shortcuts to inc/desc last number in url
+    \tikzstyle{every path}=[draw]
 
-config/vimfx/config.js | 33 +++++++++++++++++++
-1 file changed, 33 insertions(+)
+    \matrix[column sep={1em,between origins}, row sep=\lineskip]
+    {
+      \commit{d764b48}{\event{Bosch}{2016}{
+          Fuck yeah\\
+          I got multi line text\\
+          I got multi line text\\
+          I got multi line text\\
+          I got multi line text\\
+          I got multi line text
+          \bigbreak
+        }
+      } & \\
+      \commit{54ba4b2}{release 2014-01-25} & \\
+      \commitGhost{54ba4b2}{release 2014-01-25} & \\
+      \commitGhost{54ba4b2}{release 2014-01-25} & \\
+      \commitGhost{54ba4b2}{release 2014-01-25} & \\
+      \commit{c589395}{Merge branch `master'} & \\
+      & \commit{9f9c652}{Remove holdover from kjh gh-pages branch} \\
+      \commit{b3bd158}{exclude font files} & \ghost{branch1} \\
+      \commit{63268c1}{micro-typography} & \\
+    };
 
-commit 48fa61181fc1342bde3a14edee7b992f30f03b43
-Author: Le Tien Tai <letientai299@gmail.com>
-Date:   Sun Jan 8 19:42:38 2017 +0700
+    \connect{63268c1}{branch1};
+    \connect{branch1}{9f9c652};
+    \connect{b3bd158}{c589395};
+    \connect{9f9c652}{c589395};
+    \connect{c589395}{54ba4b2};
+    \connect{54ba4b2}{d764b48};
+    \connect{63268c1}{b3bd158};
 
-Add shortcuts for some more sites
 
-config/vimfx/config.js | 3 +++
-1 file changed, 3 insertions(+)
-\end{minted}
+  \end{tikzpicture}
+}
