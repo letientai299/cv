@@ -18,8 +18,7 @@ gulp.task('default', ['build']);
  * Call latexmk to build the file.
  */
 gulp.task('build', () => {
-  generateColorTheme();
-  copyAndMake();
+  build();
 });
 
 /**
@@ -32,13 +31,15 @@ gulp.task('clean', function () {
 /**
  * Spawn the pdf viewer and recompile whenever *.tex file change.
  */
-gulp.task('serve', ['build'], function () {
-  open('dest/main.pdf')
+gulp.task('serve', function () {
+  build(() => open('dest/main.pdf'));
 
   /*
    * Recompile pdf normally on tex and image files change
    */
-  gulp.watch(SIMPLE_FILES, {base: 'src'})
+  gulp.watch(SIMPLE_FILES, {
+      base: 'src'
+    })
     .on('change', e => {
       gulp.src(e.path)
         .pipe(debug())
@@ -57,22 +58,37 @@ gulp.task('serve', ['build'], function () {
 });
 
 /**
+ * Build the PDF
+ */
+function build(cb) {
+  generateColorTheme();
+  copyAndMake(cb);
+}
+
+/**
  * Copy everything under src folder into dest, and trigger make on end.
  */
-function copyAndMake() {
-  return gulp.src(SIMPLE_FILES, {base: 'src'})
+function copyAndMake(cb) {
+  return gulp.src(SIMPLE_FILES, {
+      base: 'src'
+    })
     .pipe(gulp.dest('dest'))
-    .on('end', make);
+    .on('end', () => make(cb));
 }
 
 /**
  * Spawn latexmk to build project on dest folder
  */
-function make() {
+function make(cb) {
+  if (cb == null) {
+    cb = () => {
+      console.log("Latexmk complete.")
+    };
+  }
   // Use spawnSync to ensure that we always have the pdf ready after make()
-  cp.spawnSync('latexmk', {
+  cp.spawn('latexmk', {
     cwd: 'dest'
-  })
+  }).on('close', cb);
 }
 
 /**
@@ -95,7 +111,7 @@ function generateColorTheme(cb) {
   let theme = config.themes[themeName];
 
   if (cb == null) {
-    cb = () => {} ;// no-op
+    cb = () => {}; // no-op
   }
 
   removeSvgTempFileSync();
