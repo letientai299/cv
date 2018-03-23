@@ -1,2 +1,5 @@
 dest/
 .vscode/
+*.aux
+*.log
+*.out
