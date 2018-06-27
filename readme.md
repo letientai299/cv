@@ -23,7 +23,7 @@ How to use the code
 - LaTeX. I recommend [MikTeX](https://miktex.org/) distribution for Windows. If
   you use TeXLive, you'll need 2016 distribution.
 - [Latexmk](http://mg.readthedocs.io/latexmk.html)
-- Nodejs and NPM
+- Nodejs
 
 
 ### Guide
@@ -38,7 +38,8 @@ How to use the code
 - If everything ok, you should have `dest/main.pdf` to view.
 - If not, mostly the cause is missing LaTeX packages.
   `cd dest`, then run `latexmk`. Its output will help to find out the missing packages.
-
+- Run `gulp build` and check file `dest/main.pdf`
+- Run `gulp serve` to start writing. The pdf should appear for previewing.
 
 ### Available Gulp Tasks
 
@@ -59,8 +60,7 @@ Credit
 ------
 
 - SVG Icons made by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy)
-  and
-  [Designerz Base](http://www.flaticon.com/authors/designerz-base)
+  and [Designerz Base](http://www.flaticon.com/authors/designerz-base)
   from www.flaticon.com is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
   However, CSS `fill` is added manually by me to enable color converting during build.
 
@@ -75,5 +75,6 @@ MIT
 Shameless plug
 --------------
 
-I'm looking for a new job, willing to relocate.
+I'm looking for a new job, especially a remote job.
 If you're interested, kindly drop me a line.
+
