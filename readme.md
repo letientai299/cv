@@ -1,9 +1,9 @@
-My CV, build with LaTeX and Gulp
-================================
+My Resume, build with LaTeX and Gulp
+====================================
 
 ![Previews](./dist/preview.png)
 
-If you just want to read my CV, here are the PDF:
+If you just want to read my Resume, here are the PDF:
 
 - [Light theme](./dist/light.pdf), printer friendly.
 - [Dark theme](./dist/dark.pdf), for night owl like me.
@@ -53,18 +53,6 @@ How to use the code
   The change will be picked up if your PDF reader is non-blocking.
   I suggest to use [zathura](https://pwmt.org/projects/zathura/) on Linux,
   or [Sumatra](https://www.sumatrapdfreader.org/free-pdf-reader.html) on Windows.
-
-
-
-Credit
-------
-
-- SVG Icons made by [Dave Gandy](http://www.flaticon.com/authors/dave-gandy)
-  and [Designerz Base](http://www.flaticon.com/authors/designerz-base)
-  from www.flaticon.com is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
-  However, CSS `fill` is added manually by me to enable color converting during build.
-
-- Thanks Paul Gessler on [How can I produce the history graph of a Git repository in LaTeX?](http://tex.stackexchange.com/questions/125244/how-can-i-produce-the-history-graph-of-a-git-repository-in-latex/156501#156501) for the original tikz code.
 
 License
 -------
