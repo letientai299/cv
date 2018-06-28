@@ -1,146 +1,109 @@
-\section*{Experience}
+\section*{Experience | \small{Most notable projects}}
 {%
-
-  Robert Bosch Engineering and Business Solutions Vietnam Co., Ltd.\\
-  07/2014 - Present
-
-  % Next time update CV, I'll write to script to auto-gen below content.
-  % Credit to Paul Gessler for the oginal code, which the below code is based connect
-  % http://tex.stackexchange.com/questions/125244/how-can-i-produce-the-history-graph-of-a-git-repository-in-latex/156501#156501
-
-  % Define the header of a project
-  % Args:
-  % - #1: project code name. This won't be shown on the pdf, just use for making
-  %   tikz node anchor.
-  % - #2: Project name.
-  % - #3: Project timeline.
-  \newcommand{\commitHeader}[3]{
-    \node[commit] (#1) {};
-    \node[message] at (#1_header) {%
-      \textcolor{primaryColor}{#2 \hfill #3}
-    };
+  % Next time update CV, I'll write to script to auto-gen below content. Or
+  % maybe find another representation.
+  \textbf{\event
+    {Gee Pacific Technology Services Inc | Philippines}
+    {03/2017 - 06/2018}
+    {}
   }
-
-  % Alias
-  \newcommand{\chead}{\commitHeader}
-
-  % The commit mesage bodyto add more infomation about the project.
-  % This is a hack. I need to align the top of 2 tikz nodes, but I don't know
-  % how. So, I have to splits the commit body into multiple lines.
-  \newcommand{\commitBody}[1]{
-    \node[message] {#1};
+  \event
+  {Incubation project for new markets}
+  {06/2017 - 06/2018}
+  {
+    - Lead and manage the technical team. \\
+    - Define development life circle, system architecture, project structure\\
+    - Design the database schema\\
+    - Setup Gitlab CI/CD, private Docker registry (using VMWare's Habor) to
+    automatically build, test, deploy and, if anything wrong, revert changes.\\
+    - Setup production, staging and development environment, include
+    configure PostgresSQL SSL, Centos firewall, and Portainer, Nginx\\
+    - Work directly with Stake holder for analyzing business requirements\\
+    - Work directly with other department (Marketing, HR, Customer Services)
+    for hiring, supporting and implement feature request
   }
-
-  % Alias
-  \newcommand{\cbody}{\commitBody}
-
-  % Draw a line between 2 commit points
-  \newcommand{\connect}[2]{
-    \path (#1) to[out=90,in=-90] (#2);
+  \\
+  \\
+  \event
+  {Chinese online E-Commerce projects}
+  {03/2017 - 06/2017}
+  {
+    - Maintain backend applications for old system which was running several
+    websites. Occasionally implement new features.\\
+    - In first week, I've converted the old project setup from using Eclipse
+    and committed jar libraries to Maven, thus, reduced repository size and
+    decoupled the source code with the IDE.
   }
-
-  \begin{minted}{text}
-> git log --grep="notable works" --graph
-  \end{minted}
-
-  \begin{tikzpicture}
-
-    \tikzstyle{commit}=[
-    draw,
-    circle,
-    fill=primaryColor,
-    inner sep=0pt,
-    minimum size=7pt
-    ]
-
-    \tikzstyle{message}=[
-    anchor=south,
-    right,
-    outer sep=1em,
-    text width=0.9\textwidth
-    ]
-
-    \tikzstyle{every path}=[draw]
-
-    \matrix[
-      column sep={1em,between origins},
-      row sep=\lineskip
-    ]
-    {
-      \chead{SL}{SureLock App}{12/2016  - present} & \\
-      \cbody{%
-        - Developed Android app to flash and upgrade chips firmware. \\
-        - Android NFC card emulation, RxJava, Dagger 2.
-      } & \\
-
-
-      \chead{MEC}{Master Energy Control System (MEC)}{11/2016 - present} & \\
-      \cbody{%
-        - MEC is a web interface to monitor and control boilers system.\\
-        - Migrated legacy code based on Flexigrid into Bootstrap-table.
-        Reduced code size by 25\% (50\% after minification)\\
-        - JQuery, Gulp, HTML, CSS3.
-      } & \\
-
-
-      & \chead{JUP2}{JUP2 Automation Testing | On-site India}{04/2016 - 07/2016} & \\
-      \cbody{%
-        - Built an IDE-like tool to develop, execute scripts, generate reports
-        in HTML, Excel or Markdown format.\\
-        - Used ScalaCheck for unit testing core library.\\
-        - Xtext, Xtend, Java, Scala.
-      } & \\
-
-
-      \chead{SysAdmin}{Internal Server Admininitration}{02/2016 - present} & \\
-      \cbody{%
-         - Set up and maintained an Ubuntu server that runs Jira, Jenkins,
-         SVN, Gerrit Code Review and Tomcat.\\
-         - Integrated Jira, Gerrit and Jenkins to support Continuous Integration.
-      } & \\
-
-      \chead{LC}{LeanCom Simulator}{10/2015 - 01/2016} & \\
-      \cbody{%
-        - Created a simulator to support testing LeanCom
-        (COM port penetration tool using Lean protocol) without hardware.\\
-        - Java, Rxtx, Eclipse Rich Client Platform.
-      } & \\
-
-      \chead{SP}{Smart Presenter}{06/2015 - 10/2015} & \\
-      \cbody{%
-        - Smart Presenter is a cross platform mobile app to control presentation.\\
-        - Maintained and developed new features for the Android client
-        and the server run on Desktop.\\
-        - Android, \cpp, Java.
-      } & \\
-
-
-      \chead{DSE}{Driving Style Evaluation (DSE)}{01/2015 - 07/2015} & \\
-      \cbody{%
-        - Built an Android app that tracks vehicle statistic (energy, speed, etc),
-        analyses and provides suggestions for more effective and safer driving. \\
-        - Converted Matlab algorithm library into a \cpp{} library that's shared
-        by both Android and iOS apps.\\
-        - Android NDK, \cpp
-      } & \\
-
-      \chead{SA}{Smart Ads}{07/2014 - 11/2014} & \\
-      \cbody{%
-        - Built an Android app uses Image Processing to detect Bosch product
-        and provides relevant information from Internet.\\
-        - Android NDK, \cpp, OpenCV
-      } & \\
-    };
-
-    % Draw the connection between nodes
-    \connect{MEC}{SL};
-    \connect{SysAdmin}{MEC};
-    \connect{JUP2}{MEC};
-    \connect{SysAdmin}{JUP2};
-    \connect{LC}{SysAdmin};
-    \connect{SP}{LC};
-    \connect{DSE}{SP};
-    \connect{SA}{DSE};
-
-  \end{tikzpicture}
+  \\
+  \\
+  \textbf{\event
+    {Robert Bosch Engineering Vietnam (RBVH)}
+    {07/2014 - 02/2017}
+    {}
+  }
+  \event
+  {SureLock App}
+  {12/2016  - 02/2017}
+  {
+    - Develop Android app to flash and upgrade chips firmware via NFC
+  }
+  \\
+  \\
+  \event
+  {Master Energy Control System (MEC)}
+  {11/2016 - 02/2017}
+  {
+    - MEC is a web interface to monitor and control Bosch boilers system,
+    very popular in EU\\
+    - Migrate legacy code based on Flexigrid into Bootstrap-table.
+    Reduced code size by 25\% (50\% after minification)\\
+    - Setup live-reload,  that speed up the development when adding new
+    features\\
+    - JQuery, Gulp, Nodemon
+  }
+  \\
+  \\
+  \event
+  {JUP2 Automation Testing | India}
+  {04/2016 - 07/2016}
+  {
+    - The goal is to replace manual test with automation test, which should
+    support wide range of productions that communicate to computer via several
+    private protocols. Thus, we develop an DSL scripting language and a IDE for
+    it to develop, execute scripts, generate reports in HTML, Excel or Markdown
+    format.
+    \\
+    - Implement core libraries to support communication protocols. The previous
+    3 year old library (used in manual test) can't  handle extended version of
+    the protocol, and there's no document left  after previous developer leave.
+    \\
+    - Learn Scala in 2 weeks and use ScalaCheck for unit testing core libraries.\\
+    - Learn Xtext and Xtend for develop the DSL
+  }
+  \\
+  \\
+  \event
+  {Internal Server Administration}
+  {02/2016 - 02/2017}
+  {
+    - Set up and maintain an Ubuntu server that runs Jira, Jenkins,
+    SVN, Git, Gerrit Code Review and some Tomcat servers.\\
+    - Integrate LDAP to Jira, so that Bosch employees can use their internal
+    identity to log in. We have serve people of Bosch Vietnam, India and
+    German. \\
+    - Integrate Jira, Gerrit and Jenkins to support CI/CD.
+  }
+  \\
+  \\
+  \event
+  {Driving Style Evaluation (DSE)}
+  {01/2015 - 07/2015}
+  {
+    - Build Android app that tracks vehicle statistic (energy, speed, etc),
+    analysis and provides suggestions for more effective driving. The app will
+    communicate via with specialized Bosch Head Unit via Bluetooth
+    \\
+    - Convert Matlab algorithm library into a \cpp{} library that's shared
+    by both Android (via NDK, JNI) and iOS apps.
+  }
 }
