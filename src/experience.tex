@@ -1,73 +1,81 @@
 \section*{Experience | \small{Most notable projects}}
 {%
   % Next time update CV, I'll write to script to auto-gen below content. Or
-  % maybe find another representation.
+    % maybe find another representation.
+    \textbf{\event
+      {Shopee | Singapore}
+      {09/2018 - present}
+      {Software Engineer}
+    }
+
+  {
+    - Works in the Core Server Team, who maintaining the critical servers and
+      databases of Shopee. Our team provide API for other teams while ensure
+      that the databases is not dead under the billion requests per day.
+      \\
+    - Do interview and mentoring new hires.
+  }
+  \break
+
   \textbf{\event
     {Gee Pacific Technology Services Inc | Philippines}
     {03/2017 - 06/2018}
-    {}
+    {Technical Lead}
   }
+  \textit{This is an online betting company, and I'm not really proud of my work
+    here.}
 
   \event
   {Incubation project for new markets}
   {06/2017 - 06/2018}
   {
-    - Lead development team \\
-    - Define development life circle, system architecture, project structure\\
-    - Design the database schema\\
-    - Setup Gitlab CI, private Docker registry (use VMWare's Habor) to
-    automatically build, test, deploy, and, if anything wrong, revert changes\\
-    - Setup production, staging and development environments\\
-    - Configure PostgreSQL SSL, CentOS firewall, Portainer, Nginx\\
-    - Work directly with stakeholders for analyzing business requirements\\
-    - Work directly with other departments (Marketing, HR, Customer Services)
-    for hiring, supporting and implement feature request
+    - Lay the foundation for all subproject: define development life circle,
+      system architecture, project structure, design the db schema, setup Gitlab
+      CI, private Docker registry (VMWare's Habor), setup production, staging and
+      development environments\dots
+      \\
+    - Lead development team, interview, hire (and fire) devs
+      \\
+    - Work directly with stakeholders and other departments for analyzing
+      business requirements
   }
 
   \event
-  {Chinese online E-Commerce projects}
+  {Chinese online betting projects}
   {03/2017 - 06/2017}
   {
-    - Maintain backend applications for old system which was running several
-    websites. Occasionally implement new features.\\
-    - In the first week, I've converted the old project setup from using
-    Eclipse and committed jar libraries to Maven, thus, reduce repository size
-    and decoupled the source code with the IDE.
+    - Maintain backend applications for old system which was running for several
+      websites. Occasionally implement new features.
   }
 
   \textbf{\event
     {Robert Bosch Engineering Vietnam (RBVH)}
     {07/2014 - 02/2017}
-    {}
+    {Senior Software Engineer}
   }
 
   \event
   {Master Energy Control System (MEC)}
   {11/2016 - 02/2017}
   {
-    - MEC is a web interface to monitor and control Bosch boilers system\\
-    - Migrate legacy code based on Flexigrid into Bootstrap-table.
-    Reduce code size by 25\% (50\% after minification)\\
-    - Setup live-reload,  that speed up the development when adding new
-    features
+    - MEC is a web interface to monitor and control Bosch boilers system
+      \
+       Migrate legacy code based on Flexigrid (unmaintained) into Bootstrap-table.
+      Reduce code size by 25\% (50\% after minification), while fix some very old
+      bugs.\\
+      - Setup live-reload, that speed up the development when adding new
+      features. Introduce unit tests.
   }
 
   \event
   {JUP2 Automation Testing | India}
   {04/2016 - 07/2016}
   {
-    - The goal is to replace manual test with automation test, which should
-    support wide range of productions that communicate to computer via several
-    private protocols. Thus, we develop an DSL scripting language and a IDE for
-    it to develop, execute scripts, generate reports in HTML, Excel or Markdown
-    format.
-    \\
-    - Reimplement core libraries to support communication protocols, because
-    the other 3 years old library can't  handle extended versions of
-    our protocol, and there's no document or tests for that one.
-    \\
-    - Use ScalaCheck for unit testing core libraries.\\
-    - Learn Xtext and Xtend for develop the DSL
+    - Reimplement the 3 years old core library, which is not compilable then, to
+      support change in communication protocols.
+      \\
+      - Build a new IDE-like tool for QA to write and run spec for new hardware
+      product, and generate reports in HTML, CSV or Markdown format.
   }
 
   \event
@@ -75,22 +83,17 @@
   {02/2016 - 02/2017}
   {
     - Set up and maintain an Ubuntu server that runs Jira, Jenkins,
-    SVN, Git, Gerrit Code Review and some Tomcat servers.\\
-    - Integrate LDAP to Jira, so that Bosch employees can use their internal
-    identity to log in. We have serve people of Bosch Vietnam, India and
-    German. \\
-    - Integrate Jira, Gerrit and Jenkins to support CI/CD.
+      SVN, Git, Gerrit Code Review and some Tomcat servers.\\
+        - Integrate Jira, Gerrit, Jenkins and create full CI/CD workflow.
   }
 
   \event
   {Driving Style Evaluation (DSE)}
   {01/2015 - 07/2015}
   {
-    - Build Android app that tracks vehicle statistic (energy, speed,\dots),
-    analysis and provides suggestions for more effective driving. The app
-    communicates with specialized Bosch Head Unit via Bluetooth.
-    \\
-    - Convert Matlab library into a \cpp{} library that's used by
-     both Android (via NDK, JNI) and iOS apps.
+    Build Android app for tracking vehicle statistic (energy, speed, fuel
+        consumption\dots), analyse and suggest driving adjustment. Convert a Matlab
+      library into a \cpp{} library that's used by both Android (via NDK, JNI) and
+      iOS.
   }
 }
