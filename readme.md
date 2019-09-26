@@ -1,5 +1,4 @@
-My Resume, build with LaTeX and Gulp
-====================================
+# My Resume, build with LaTeX and Gulp
 
 ![Previews](./dist/preview.png)
 
@@ -8,23 +7,20 @@ If you just want to read my Resume, here are the PDF:
 - [Light theme](./dist/light.pdf), printer friendly.
 - [Dark theme](./dist/dark.pdf), for night owl like me.
 
+## Feature
 
-Feature
--------
 - Live Reload: edit `*.tex` or `config.json` files and see the result immediately.
 - Themeable: there's 2 theme currently, light and dark, and you can also tweak your own theme.
 
-
-How to use the code
--------------------
+## How to use the code
 
 ### Prerequisites
 
-- LaTeX. I recommend [MikTeX](https://miktex.org/) distribution for Windows. If
-  you use TeXLive, you'll need 2016 distribution.
+-^ LaTeX. I recommend [MikTeX](https://miktex.org/) distribution for Windows. If
+you use TeXLive, you'll need 2016 distribution.
+
 - [Latexmk](http://mg.readthedocs.io/latexmk.html)
 - Nodejs
-
 
 ### Guide
 
@@ -54,15 +50,11 @@ How to use the code
   I suggest to use [zathura](https://pwmt.org/projects/zathura/) on Linux,
   or [Sumatra](https://www.sumatrapdfreader.org/free-pdf-reader.html) on Windows.
 
-License
--------
+## License
 
 MIT
 
-
-Shameless plug
---------------
+## Shameless plug
 
 I'm looking for a new job, especially a remote job.
 If you're interested, kindly drop me a line.
-

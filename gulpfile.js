@@ -1,61 +1,49 @@
-const gulp = require('gulp');
-const del = require('del')
-const cp = require('child_process');
-const debug = require('gulp-debug');
-const gutil = require('gulp-util');
-const replace = require('gulp-replace');
-const glob = require('glob');
-const fs = require('fs');
+const gulp = require("gulp");
+const del = require("del");
+const cp = require("child_process");
+const debug = require("gulp-debug");
+const Vinyl = require("vinyl");
+const replace = require("gulp-replace");
+const glob = require("glob");
+const fs = require("fs");
 
 /**
  * Files that don't require any special treatment.
  */
-const SIMPLE_FILES = ['src/*.tex', 'src/images/*', 'src/latexmkrc']
-
-gulp.task('default', ['build']);
-
-/**
- * Call latexmk to build the file.
- */
-gulp.task('build', () => {
-  build();
-});
-
-/**
- * Delete latexmk and minted output folder.
- */
-gulp.task('clean', function () {
-  del(['dest']);
-})
+const SIMPLE_FILES = ["src/*.tex", "src/images/*", "src/latexmkrc"];
 
 /**
  * Spawn the pdf viewer and recompile whenever *.tex file change.
  */
-gulp.task('serve', function () {
-  build(() => open('dest/main.pdf'));
+gulp.task(
+  "serve",
+  gulp.parallel(() => {
+    build(() => open("dest/main.pdf"));
 
-  /*
-   * Recompile pdf normally on tex and image files change
-   */
-  gulp.watch(SIMPLE_FILES, {
-      base: 'src'
-    })
-    .on('change', e => {
-      gulp.src(e.path)
-        .pipe(debug())
-        .pipe(gulp.dest('dest'))
-        .on('end', make);
-    })
+    /*
+     * Recompile pdf normally on tex and image files change
+     */
+    gulp
+      .watch(SIMPLE_FILES, {
+        base: "src"
+      })
+      .on("change", path => {
+        gulp
+          .src(path)
+          .pipe(debug())
+          .pipe(gulp.dest("dest"))
+          .on("end", make);
+      });
 
-  /*
-   * Generate the theme files, convert svg color to match with once config.json
-   * change.
-   */
-  gulp.watch(['src/config.json'])
-    .on('change', (e) => {
-      generateColorTheme(make)
-    })
-});
+    /*
+     * Generate the theme files, convert svg color to match with once config.json
+     * change.
+     */
+    gulp.watch(["src/config.json"]).on("change", e => {
+      generateColorTheme(make);
+    });
+  })
+);
 
 /**
  * Build the PDF
@@ -69,11 +57,12 @@ function build(cb) {
  * Copy everything under src folder into dest, and trigger make on end.
  */
 function copyAndMake(cb) {
-  return gulp.src(SIMPLE_FILES, {
-      base: 'src'
+  return gulp
+    .src(SIMPLE_FILES, {
+      base: "src"
     })
-    .pipe(gulp.dest('dest'))
-    .on('end', () => make(cb));
+    .pipe(gulp.dest("dest"))
+    .on("end", () => make(cb));
 }
 
 /**
@@ -82,13 +71,15 @@ function copyAndMake(cb) {
 function make(cb) {
   if (cb == null) {
     cb = () => {
-      console.log("Latexmk complete.")
+      console.log("Latexmk complete.");
     };
   }
   // Use spawnSync to ensure that we always have the pdf ready after make()
-  cp.spawn('latexmk', {
-    cwd: 'dest'
-  }).on('close', cb);
+  cp.spawn("latexmk", {
+    cwd: "dest"
+  }).on("close", () => {
+    cb();
+  });
 }
 
 /**
@@ -96,8 +87,7 @@ function make(cb) {
  * Currently support Linux and Window only.
  */
 function open(pdfFile) {
-  let command = process.platform.match('win.*') ?
-    "start" : "xdg-open";
+  let command = process.platform.match("win.*") ? "start" : "xdg-open";
   let execCommand = `${command} ${pdfFile}`;
   return cp.exec(execCommand);
 }
@@ -106,7 +96,7 @@ function open(pdfFile) {
  * Convert config.json to tex file(s).
  */
 function generateColorTheme(cb) {
-  let config = JSON.parse(fs.readFileSync('./src/config.json', 'utf8'));
+  let config = JSON.parse(fs.readFileSync("./src/config.json", "utf8"));
   let themeName = config.useTheme;
   let theme = config.themes[themeName];
 
@@ -117,18 +107,21 @@ function generateColorTheme(cb) {
   removeSvgTempFileSync();
 
   // Change svg fill color.
-  gulp.src('src/images/*.svg')
+  gulp
+    .src("src/images/*.svg")
     .pipe(replace(/fill:#[0-9a-fA-F]{6}/, `fill:${theme.primaryColor}`))
-    .pipe(gulp.dest('dest'))
-    .on('end', () => writeNewColorTexFile(theme, cb));
+    .pipe(gulp.dest("dest"))
+    .on("end", () => writeNewColorTexFile(theme, cb));
 }
 
 /**
  * Remove all pdf and pdf_tex file generated from svg file by inkscape
  */
 function removeSvgTempFileSync() {
-  return glob.sync("src/*.svg").map(f => f.replace('src', 'dest'))
-    .map(f => f.replace('.svg', '.*'))
+  return glob
+    .sync("src/*.svg")
+    .map(f => f.replace("src", "dest"))
+    .map(f => f.replace(".svg", ".*"))
     .forEach(f => del(f));
 }
 
@@ -137,28 +130,39 @@ function removeSvgTempFileSync() {
  */
 function writeNewColorTexFile(theme, cb) {
   let colorThemeTexContent = Object.keys(theme)
-    .map(k => `\\definecolor{${k}}{HTML}{${theme[k].replace('#', '')}}`)
-    .join('\n')
-  return srcString('colorTheme.tex', colorThemeTexContent)
-    .pipe(gulp.dest('dest'))
-    .on('end', cb);
+    .map(k => `\\definecolor{${k}}{HTML}{${theme[k].replace("#", "")}}`)
+    .join("\n");
+  return srcString("colorTheme.tex", colorThemeTexContent)
+    .pipe(gulp.dest("dest"))
+    .on("end", cb);
 }
 
 /**
  * Pipe a string to a file.
  */
 function srcString(filename, content) {
-  var src = require('stream').Readable({
+  var src = require("stream").Readable({
     objectMode: true
-  })
-  src._read = function () {
-    this.push(new gutil.File({
-      cwd: "",
-      base: "",
-      path: filename,
-      contents: new Buffer(content)
-    }))
-    this.push(null)
-  }
-  return src
+  });
+  src._read = function() {
+    this.push(
+      new Vinyl({
+        cwd: "./",
+        base: "./",
+        path: filename,
+        contents: Buffer.from(content)
+      })
+    );
+    this.push(null);
+  };
+  return src;
 }
+
+exports.default = build;
+/**
+ * Delete latexmk and minted output folder.
+ */
+exports.clean = gulp.series(cb => {
+  del.sync(["dest"]);
+  cb();
+});
