@@ -16,7 +16,7 @@ If you just want to read my Resume, here are the PDF:
 
 ### Prerequisites
 
--^ LaTeX. I recommend [MikTeX](https://miktex.org/) distribution for Windows. If
+^-^ LaTeX. I recommend [MikTeX](https://miktex.org/) distribution for Windows. If
 you use TeXLive, you'll need 2016 distribution.
 
 - [Latexmk](http://mg.readthedocs.io/latexmk.html)
