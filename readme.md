@@ -50,11 +50,10 @@ you use TeXLive, you'll need 2016 distribution.
   I suggest to use [zathura](https://pwmt.org/projects/zathura/) on Linux,
   or [Sumatra](https://www.sumatrapdfreader.org/free-pdf-reader.html) on Windows.
 
+## Misc
+
+[![Tai's github stats](https://github-readme-stats.vercel.app/api?username=letientai299)](https://github.com/anuraghazra/github-readme-stats)
+
 ## License
 
 MIT
-
-## Shameless plug
-
-I'm looking for a new job, especially a remote job.
-If you're interested, kindly drop me a line.
