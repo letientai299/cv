@@ -1,0 +1,6 @@
+tabWidth: 2
+proseWrap: always
+semi: true
+trailingComma: all
+singleQuote: true
+printWidth: 80

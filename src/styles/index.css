@@ -1,0 +1,131 @@
+@import url('./fonts.css');
+
+:root {
+  --fg: hsl(0, 5%, 10%);
+  --bg: hsl(210, 20%, 98%);
+  --blue: hsl(238, 84%, 52%);
+  --red: hsl(0, 100%, 33%);
+  --mono: hsl(210, 28%, 93%);
+  --p-break: 0.6rem;
+}
+
+html {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+h2,
+h3 {
+  padding-top: var(--p-break);
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+body {
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  max-width: 120ch;
+  line-height: 1.6;
+  margin: 0 auto;
+  color: var(--fg);
+  background-color: var(--bg);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--red);
+  text-underline-offset: 0.3rem;
+}
+
+p {
+  margin: 0;
+  text-align: justify;
+  padding-bottom: var(--p-break);
+}
+
+ul {
+  margin: 0 0 var(--p-break);
+  padding: 0 0 0 2rem;
+}
+
+/* Styles for inline code or code snippets */
+code,
+pre {
+  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  font-size: 85%;
+  hyphens: none;
+}
+
+@page {
+  size: A4;
+}
+
+@media print {
+  html {
+    font-size: 10pt;
+    padding: 0;
+  }
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 210mm), print {
+  .space-between {
+    flex-direction: row;
+  }
+
+  h1 + p,
+  #exp {
+    float: left;
+    clear: bottom;
+    width: 64%;
+    padding-right: 0.5rem;
+    border-right: 1px solid var(--red);
+  }
+
+  #contacts,
+  #skills,
+  #pj,
+  #oss,
+  #hobbies,
+  #edu {
+    padding-left: 0.5rem;
+    clear: none;
+    float: right;
+    width: 36%;
+  }
+}

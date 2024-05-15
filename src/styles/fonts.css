@@ -1,0 +1,91 @@
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url('/public/fonts/LM-regular.woff2') format('woff2'),
+    url('/public/fonts/LM-regular.woff') format('woff'),
+    url('/public/fonts/LM-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url('/public/fonts/LM-italic.woff2') format('woff2'),
+    url('/public/fonts/LM-italic.woff') format('woff'),
+    url('/public/fonts/LM-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    url('/public/fonts/LM-bold.woff2') format('woff2'),
+    url('/public/fonts/LM-bold.woff') format('woff'),
+    url('/public/fonts/LM-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    url('/public/fonts/LM-bold-italic.woff2') format('woff2'),
+    url('/public/fonts/LM-bold-italic.woff') format('woff'),
+    url('/public/fonts/LM-bold-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-bold-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Libertinus';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/public/fonts/Libertinus-semibold-italic.woff2') format('woff2');
+}

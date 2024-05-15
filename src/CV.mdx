@@ -1,0 +1,201 @@
+import { Tag } from './Tag';
+
+[//]: # 'prettier-ignore'
+[//]: # '@formatter:off'
+
+# Tai Le
+
+A product focus engineer who can handle projects from idea to deployments, able
+to wears many hats thanks to working with past startups.
+
+<section id={"contacts"}>
+
+## Contacts
+
+- [letientai299@gmail.com](mailto:letientai299@gmail.com)
+- [github.com/letientai299](https://github.com/letientai299)
+- [linkedin.com/in/letientai299](https://linkedin.com/in/letientai299)
+
+</section>
+
+<section id={"exp"}>
+## Experience
+
+### Shopee
+
+<Tag
+  title={'Expert Software Engineer'}
+  location={'Singapore'}
+  time={{ from: '09/2018', to: '08/2023' }}
+/>
+
+One of key members of Core Server (the backend monolith powering Shopee since
+2015, now deprecated); then become a sub-lead of Item-Stock team (formed during
+migrating Core Server into microservices); then leads the SPKit Framework team,
+which defines development standards, develop tooling and framework to support
+and enforce such standards.
+
+Author or maintainer of several critical, high performance microservices, some
+handled more than 1M _QPS_ (queries per second), with billions of DB records.
+
+- `order-id-generator`: if it downs, Order rate will drop to 0.
+- `item-info`: if it downs, Order will drop to 0.
+- `item-id-generator`: if it downs, no new Item can be added.
+- `item-tag`: if it downs, some kind of Order can't be made.
+- `item-audit`: if it downs, Item can't be edited.
+
+Author and lead maintainer of many popular internal projects, some of which
+became or inspired the _standard service development practices_ later:
+
+- `shared-service-template`: template and scaffolding tool used a lot during the
+  migration from Core Server into microservices.
+- `core-logic`: common business logic and utilities extracted from Core Server.
+- `spkit`: tool for daily development tasks like `build`, `lint`, `test`, `gen`
+  (code, components), ..., similar to
+  [`rails` CLI](https://guides.rubyonrails.org/command_line.html).
+- `spbench`: adhoc benchmark tool for SPEX (Shopee RPC framework and protocol,
+  like gRPC) service, inspired by [`wrk`](https://github.com/wg/wrk) and
+  [`hey`](https://github.com/rakyll/hey)
+- `central-ci`: centralized Gitlab CI config, supports common CI jobs like
+  `build`, `lint`, `test`, `coverage`, `release` and custom jobs defined by
+  users.
+- `soupkit`: Golang API client for _SOUP_ (Shopee OAuth Platform, similar to
+  [Auth0](https://auth0.com/docs/get-started/auth0-overview)).
+
+Part-time cross-team contributor to some other high impact projects, mostly
+performance or bug fixes:
+
+- `goorm`: internal Go ORM, exists before the popular OSS
+  [`gorm`](https://gorm.io), now deprecated.
+- `golang_splib`: Go implementation of SPEX, similar to
+  [`grpc-go`](https://github.com/grpc/grpc-go)
+
+In charge of many other projects, data migrations/analysis, tech designs, ...
+related to those mentioned above.
+
+Interviewer, mentors, frequent tech-sharing speaker, and a batman who stay up
+all the nights of promotion days to monitor service health.
+
+### Gee Pacific Technology Services Inc.
+
+<Tag
+  title={'Technical Lead'}
+  location={'Philippines'}
+  time={{ from: '03/2017', to: '06/2018' }}
+/>
+
+Joined as a Full Stack Engineer to maintain 12 online-betting sites, each has
+10-50k, all was cloned and diverse from a single code based; then got assigned
+to form a new team to develop a completely new system which should cover all
+current sites' features and allow spawning new sites faster.
+
+Function like a CTO of a child company within Gee Pacific:
+
+- Work with stakeholders to analyze business requirements, manage budgets.
+- Design the tech stack, system architecture, DB schema, development workflow,
+  hiring flows, customer support flows, ...
+- Lay the foundation for all subprojects. Then mentor, train team members to be
+  able to own them.
+- Set up productions, stagings, dev environments, private Docker registry,
+  self-hosted Gitlab Runner, ...
+- Hire and fire members.
+
+Learned a ton, and build a successful project (it's still live), but leave
+(instead of run and get profit from it) due to feeling guilty of building such
+thing.
+
+### Robert Bosch Engineering & Business Solutions
+
+<Tag
+  title={'Senior Software Engineer'}
+  location={'Vietnam'}
+  time={{ from: '07/2014', to: '02/2017' }}
+/>
+
+Joined as an Intern, leave as a Jack of all trades, learned too many things
+(from desktop, android, web, backend app to server administrators) but didn't
+master anything.
+
+### Self-employed
+
+<Tag
+  title={'Freelancer'}
+  location={'Vietnam'}
+  time={{ from: '05/2013', to: '03/2014' }}
+/>
+
+Work with some college friends to build some WordPress sites for local business
+and Ho Chi Minh Communist Youth Union.
+
+</section>
+
+<section id={"pj"}>
+## Personal Projects
+
+Some useful ones among many incompleted or abandonned projects:
+
+- [google-foobar-2021](https://github.com/letientai299/google-foobar-2021):
+  solutions and thoughts after solving all 5 levels of Google Foobar.
+- [1k+ LeetCode solutions](https://github.com/letientai299/leetcode), at one
+  point [my profile](https://leetcode.com/letientai299) ranked in the top 1000.
+- [freeCodeCamp solutions](https://letientai.io/freecodecamp).
+- [7GUIs](https://github.com/letientai299/7guis): demo of 7GUIs
+  [challenge](https://eugenkiss.github.io/7guis) using React and Go.
+- [vite-react-ssr-typescript](https://github.com/letientai299/vite-react-ssr-typescript):
+  a hack to do SSR using React 18 stream rendering with Vite HMR, see also
+  [vite-plugin-react#222](https://github.com/vitejs/vite-plugin-react/issues/222).
+- [react-decorated-text](https://github.com/letientai299/react-decorated-text):
+  my first ever NPM lib, extracted from `rover`.
+- [rover](https://letientai.io/rover/#/docs/keymap.md): my WIP attempt to build
+  an overkill file explorer that is as customizable as VsCode or any Jetbrains
+  IDE.
+
+</section>
+
+<section id={"oss"}>
+
+## Open Source
+
+Proudest contributions:
+
+- [Some patches to Golang project](https://go-review.googlesource.com/q/owner:letientai299)
+- [testify#712](https://github.com/stretchr/testify/pull/712)
+- [xo#202](https://github.com/xo/xo/pull/202)
+- [vim-pydocstring#14](https://github.com/heavenshell/vim-pydocstring/pull/14)
+- [java-code-styles#30](https://github.com/square/java-code-styles/pull/30)
+
+</section>
+
+<section id="skills">
+
+## Skills
+
+I can pick up any tool, language, frameworks needed for the job. These are some
+I used to work with:
+
+- **Languages**: Golang, Java, JavaScript, TypeScript.
+- **Data Storages**: PostgreSQL, MySQL, TiDb, Sqlite, Redis, Memcached, Kafka,
+  S3, ...
+- **DevOps**: AWS, GCP, K8S, Heroku, Gitlab CI/CD, TravisCI, CircleCI, Jenkins,
+  Docker, ...
+- **Frontend**: React, React Native, C# WPF.
+
+</section>
+
+<section id={"edu"}>
+## Education
+
+<Tag
+  title={'HCM University of Science'}
+  time={{ from: '09/2011', to: '11/2015' }}
+>
+  Honor Class, Bachelor of Computer Science
+</Tag>
+</section>
+
+<section id={'hobbies'}>
+## Hobbies
+
+Reading, Hacking, Debating, Cooking, Piano, Anime, Manga.
+
+</section>
