@@ -19,4 +19,5 @@ const mdxCfg = (): PluginOption => ({
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), mdxCfg()],
+  base: process.env.NODE_ENV === 'production' ? '/cv' : '',
 });
