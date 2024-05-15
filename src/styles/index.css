@@ -29,17 +29,13 @@ html {
 h1,
 h2,
 h3 {
-  padding: 0;
+  line-height: 1;
   margin: 0;
-}
-
-h2,
-h3 {
-  padding-top: var(--p-break);
+  padding: var(--p-break) 0;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -73,7 +69,7 @@ p {
 
 ul {
   margin: 0 0 var(--p-break);
-  padding: 0 0 0 2rem;
+  padding: 0 0 0 1.2rem;
 }
 
 /* Styles for inline code or code snippets */
@@ -83,17 +79,6 @@ pre {
     monospace;
   font-size: 85%;
   hyphens: none;
-}
-
-@page {
-  size: A4;
-}
-
-@media print {
-  html {
-    font-size: 10pt;
-    padding: 0;
-  }
 }
 
 .space-between {
@@ -108,12 +93,11 @@ pre {
     flex-direction: row;
   }
 
-  h1 + p,
   #exp {
     float: left;
     clear: bottom;
-    width: 64%;
-    padding-right: 0.5rem;
+    width: 61.8029%;
+    padding-right: 1rem;
     border-right: 1px solid var(--red);
   }
 
@@ -122,10 +106,22 @@ pre {
   #pj,
   #oss,
   #hobbies,
+  #regrets,
   #edu {
-    padding-left: 0.5rem;
+    padding-left: 1rem;
     clear: none;
     float: right;
-    width: 36%;
+    width: 38.1971%;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0.5in;
+}
+
+@media print {
+  html {
+    font-size: 10pt;
   }
 }

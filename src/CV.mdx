@@ -5,8 +5,9 @@ import { Tag } from './Tag';
 
 # Tai Le
 
-A product focus engineer who can handle projects from idea to deployments, able
-to wears many hats thanks to working with past startups.
+A product builder, who can handle projects of any scale, from idea to
+deployment. A team leader, who gears members up to eventually replace him. An
+ambitious but yet to succeed entrepreneur.
 
 <section id={"contacts"}>
 
@@ -29,23 +30,27 @@ to wears many hats thanks to working with past startups.
   time={{ from: '09/2018', to: '08/2023' }}
 />
 
-One of key members of Core Server (the backend monolith powering Shopee since
-2015, now deprecated); then become a sub-lead of Item-Stock team (formed during
-migrating Core Server into microservices); then leads the SPKit Framework team,
-which defines development standards, develop tooling and framework to support
-and enforce such standards.
+Played a key role in the Core Server, the monolithic backend powering Shopee
+between 2014 and 2022. Transitioned to a sub-lead within the Item-Stock team
+formed during the migration to microservice architecture. Later, led the SPKit
+Framework team, responsible for defining development standards, creating tools
+and frameworks to accelerate development and uphold code quality.
 
-Author or maintainer of several critical, high performance microservices, some
-handled more than 1M _QPS_ (queries per second), with billions of DB records.
+Took part in migrating billions of Item DB records from 10 to 1000 and then to
+100000 DB servers without downtime.
 
-- `order-id-generator`: if it downs, Order rate will drop to 0.
-- `item-info`: if it downs, Order will drop to 0.
-- `item-id-generator`: if it downs, no new Item can be added.
-- `item-tag`: if it downs, some kind of Order can't be made.
-- `item-audit`: if it downs, Item can't be edited.
+Author or a lead maintainer of several critical services (outages would directly
+impact Order fulfillment rate), with peak traffic exceeding 1 million QPS:
 
-Author and lead maintainer of many popular internal projects, some of which
-became or inspired the _standard service development practices_ later:
+- `item-info`: serve all low level Item information queries.
+- `item-id-generator`: solve Item creation DB hotspot.
+- `order-id-generator`: prevent competitors from estimate Order rate and
+  numerous related financial stats.
+- `item-tag`: enable managing Item metadata flexibly.
+- `item-audit`: keep logs of Item modifications
+
+Original owner of many popular internal projects, some later became or inspired
+the _standard development practices_ and the creation of SPKit Framework team:
 
 - `shared-service-template`: template and scaffolding tool used a lot during the
   migration from Core Server into microservices.
@@ -65,16 +70,13 @@ became or inspired the _standard service development practices_ later:
 Part-time cross-team contributor to some other high impact projects, mostly
 performance or bug fixes:
 
-- `goorm`: internal Go ORM, exists before the popular OSS
-  [`gorm`](https://gorm.io), now deprecated.
+- `goorm`: internal Go ORM, predate the popular OSS [`gorm`](https://gorm.io),
+  now deprecated.
 - `golang_splib`: Go implementation of SPEX, similar to
   [`grpc-go`](https://github.com/grpc/grpc-go)
 
-In charge of many other projects, data migrations/analysis, tech designs, ...
-related to those mentioned above.
-
-Interviewer, mentors, frequent tech-sharing speaker, and a batman who stay up
-all the nights of promotion days to monitor service health.
+Interviewer, mentor, consultant, frequent tech-sharing speaker, and a batman who
+stay up all the nights of promotion days to monitor service health.
 
 ### Gee Pacific Technology Services Inc.
 
@@ -84,25 +86,25 @@ all the nights of promotion days to monitor service health.
   time={{ from: '03/2017', to: '06/2018' }}
 />
 
-Joined as a Full Stack Engineer to maintain 12 online-betting sites, each has
-10-50k, all was cloned and diverse from a single code based; then got assigned
-to form a new team to develop a completely new system which should cover all
-current sites' features and allow spawning new sites faster.
+Joined as a Full Stack Engineer to maintain 12 online-betting sites (10k-50k DAU
+each) diverse from a single messy codebase. Quickly advanced to form and lead a
+new team for building a completely new system that cover all current features
+and allow spawning new sites faster.
 
-Function like a CTO of a child company within Gee Pacific:
+Functioned like a CTO of a child company within the parent:
 
-- Work with stakeholders to analyze business requirements, manage budgets.
-- Design the tech stack, system architecture, DB schema, development workflow,
-  hiring flows, customer support flows, ...
-- Lay the foundation for all subprojects. Then mentor, train team members to be
-  able to own them.
+- Work with stakeholders to analyze business needs, manage roadmap and budget.
+- Design the tech stack, architecture, DB schema, development workflow, hiring
+  process, customer support flow, ...
 - Set up productions, stagings, dev environments, private Docker registry,
   self-hosted Gitlab Runner, ...
 - Hire and fire members.
+- Lay the foundation codebase for all Spring Boot microservices. Mentor team
+  members to be able to own their parts.
 
-Learned a ton, and build a successful project (it's still live), but leave
-(instead of run and get profit from it) due to feeling guilty of building such
-thing.
+Learnt a ton from the job and all team members. Built a successful system (it's
+still alive today), but left (instead of getting a share from it) due to feeling
+guilty of building such thing.
 
 ### Robert Bosch Engineering & Business Solutions
 
@@ -112,20 +114,19 @@ thing.
   time={{ from: '07/2014', to: '02/2017' }}
 />
 
-Joined as an Intern, leave as a Jack of all trades, learned too many things
-(from desktop, android, web, backend app to server administrators) but didn't
-master anything.
+Joined as an intern, left as a versatile generalist in too many domains:
+desktop, Android, iOS, web, backend, server administration, Eclipse RCP...
 
 ### Self-employed
 
 <Tag
   title={'Freelancer'}
   location={'Vietnam'}
-  time={{ from: '05/2013', to: '03/2014' }}
+  time={{ from: '04/2013', to: '05/2014' }}
 />
 
-Work with some college friends to build some WordPress sites for local business
-and Ho Chi Minh Communist Youth Union.
+Collaborated with former university colleagues to develop WordPress websites for
+local businesses and the Ho Chi Minh City Communist Youth Union.
 
 </section>
 
@@ -144,11 +145,8 @@ Some useful ones among many incompleted or abandonned projects:
 - [vite-react-ssr-typescript](https://github.com/letientai299/vite-react-ssr-typescript):
   a hack to do SSR using React 18 stream rendering with Vite HMR, see also
   [vite-plugin-react#222](https://github.com/vitejs/vite-plugin-react/issues/222).
-- [react-decorated-text](https://github.com/letientai299/react-decorated-text):
-  my first ever NPM lib, extracted from `rover`.
-- [rover](https://letientai.io/rover/#/docs/keymap.md): my WIP attempt to build
-  an overkill file explorer that is as customizable as VsCode or any Jetbrains
-  IDE.
+- [rover](https://letientai.io/rover/#/docs/keymap.md): WIP attempt to build an
+  overkill file explorer that is as customizable as VsCode or a Jetbrains IDE.
 
 </section>
 
@@ -158,27 +156,30 @@ Some useful ones among many incompleted or abandonned projects:
 
 Proudest contributions:
 
-- [Some patches to Golang project](https://go-review.googlesource.com/q/owner:letientai299)
-- [testify#712](https://github.com/stretchr/testify/pull/712)
-- [xo#202](https://github.com/xo/xo/pull/202)
-- [vim-pydocstring#14](https://github.com/heavenshell/vim-pydocstring/pull/14)
-- [java-code-styles#30](https://github.com/square/java-code-styles/pull/30)
+- [Some patches to Golang project](https://go-review.googlesource.com/q/owner:letientai299).
+- [testify#712](https://github.com/stretchr/testify/pull/712): fix a bug in the
+  popular Golang testing lib discovered while investigating service performance
+  on newer Go versions.
+- [xo#202](https://github.com/xo/xo/pull/202): support cross schemas FK and
+  multi schemas for the `xo` ORM code generation.
+- [vim-pydocstring#14](https://github.com/heavenshell/vim-pydocstring/pull/14):
+  add Vimscript tests and fix some issues, result of trying to use Vim as an IDE
+  for Python 3.
+- [java-code-styles#30](https://github.com/square/java-code-styles/pull/30):
+  first accepted PR.
 
 </section>
 
 <section id="skills">
 
-## Skills
+## Hard skills
 
-I can pick up any tool, language, frameworks needed for the job. These are some
-I used to work with:
+Some technologies I used to work with:
 
-- **Languages**: Golang, Java, JavaScript, TypeScript.
-- **Data Storages**: PostgreSQL, MySQL, TiDb, Sqlite, Redis, Memcached, Kafka,
-  S3, ...
-- **DevOps**: AWS, GCP, K8S, Heroku, Gitlab CI/CD, TravisCI, CircleCI, Jenkins,
-  Docker, ...
-- **Frontend**: React, React Native, C# WPF.
+- **Languages**: Golang, Java, JavaScript, TypeScript, React, SQL, ...
+- **Data Storages**: PostgreSQL, MySQL, TiDB, Redis, Memcached, Kafka, S3, ...
+- **DevOps**: AWS, GCP, Cloudflare, Kubernetes, Gitlab CI/CD, Docker, Heroku,
+  ...
 
 </section>
 
@@ -196,6 +197,17 @@ I used to work with:
 <section id={'hobbies'}>
 ## Hobbies
 
-Reading, Hacking, Debating, Cooking, Piano, Anime, Manga.
+Reading, hacking, debating, cooking, running, piano, anime, manga.
+
+</section>
+
+<section id={'regrets'}>
+
+## Regrets
+
+- Didn't write more blog.
+- Didn't lose weight seriously sooner.
+- Didn't start the career with frontend.
+- Didn't buy BitCoin when it's cheap.
 
 </section>
