@@ -53,7 +53,7 @@ body {
   margin: 0 auto;
   color: var(--fg);
   background-color: var(--bg);
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
 }
 
 a {
