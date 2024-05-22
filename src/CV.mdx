@@ -53,9 +53,9 @@ impact Order fulfillment rate), with peak traffic exceeding 1 million QPS:
 Original owner of many popular internal projects, some later became or inspired
 the _standard development practices_ and the creation of SPKit Framework team:
 
-- `shared-service-template`: template and scaffolding tool used a lot during the
-  migration from Core Server into microservices.
-- `core-logic`: common business logic and utilities extracted from Core Server.
+- `gas` (Go Application Server): like Spring Boot for Golang, support dependency
+  injection, abtracts away common server/objects life-cycle, allows devs to
+  focus on business logic.
 - `spkit`: tool for daily development tasks like `build`, `lint`, `test`, `gen`
   (code, components), ..., similar to
   [`rails` CLI](https://guides.rubyonrails.org/command_line.html).
@@ -65,11 +65,13 @@ the _standard development practices_ and the creation of SPKit Framework team:
 - `central-ci`: centralized Gitlab CI config, supports common CI jobs like
   `build`, `lint`, `test`, `coverage`, `release` and custom jobs defined by
   users.
-- `soupkit`: Golang API client for _SOUP_ (Shopee OAuth Platform, similar to
+- `shared-service-template`: template and scaffolding tool used a lot during the
+  migration from Core Server into microservices.
+- `soupkit`: Golang API client for _SOUP_ (Shopee OAuth Platform, like
   [Auth0](https://auth0.com/docs/get-started/auth0-overview)).
+- `core-logic`: common business logic and utilities extracted from Core Server.
 
-Part-time cross-team contributor to some other high impact projects, mostly
-performance or bug fixes:
+Part-time cross-team contributor to some other high impact projects, notably:
 
 - `goorm`: internal Go ORM, predate the popular OSS [`gorm`](https://gorm.io),
   now deprecated.
