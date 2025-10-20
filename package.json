@@ -28,7 +28,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "playwright": "^1.44.0",
+    "playwright": "^1.55.1",
     "prettier": "^3.2.5",
     "remark-gfm": "^4.0.0",
     "remark-inline-links": "^7.0.0",
