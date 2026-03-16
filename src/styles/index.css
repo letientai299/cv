@@ -47,7 +47,8 @@ h3 {
 }
 
 body {
-  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-family:
+    'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   max-width: 120ch;
   line-height: 1.6;
   margin: 0 auto;
@@ -75,8 +76,8 @@ ul {
 /* Styles for inline code or code snippets */
 code,
 pre {
-  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+  font-family:
+    Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   font-size: 85%;
   hyphens: none;
 }
