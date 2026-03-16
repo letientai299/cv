@@ -23,4 +23,4 @@ description = "Preview production build"
 
 [tasks.pdf]
 run = "bun ./scripts/pdf.js"
-description = "Generate PDF from dev server"
+description = "Generate PDF (requires 'mise dev' running)"

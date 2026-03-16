@@ -54,7 +54,7 @@ body {
   margin: 0 auto;
   color: var(--fg);
   background-color: var(--bg);
-  text-rendering: geometricPrecision;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -96,7 +96,7 @@ pre {
 
   #exp {
     float: left;
-    clear: bottom;
+    clear: none;
     width: 61.8029%;
     padding-right: 1rem;
     border-right: 1px solid var(--red);
