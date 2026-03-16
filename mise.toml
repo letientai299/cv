@@ -1,0 +1,26 @@
+[tools]
+bun = "latest"
+
+[tasks.dev]
+run = "bun vite"
+description = "Start dev server"
+
+[tasks.build]
+run = "bun tsc && bun vite build"
+description = "Type-check and build for production"
+
+[tasks.lint]
+run = "bun eslint ."
+description = "Lint source files"
+
+[tasks.fmt]
+run = "bun prettier --write ."
+description = "Format source files"
+
+[tasks.preview]
+run = "bun vite preview"
+description = "Preview production build"
+
+[tasks.pdf]
+run = "bun ./scripts/pdf.js"
+description = "Generate PDF from dev server"

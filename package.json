@@ -4,12 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "pdf": "node ./scripts/pdf.js",
-    "fmt": "pnpm prettier --write .",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "tsc && vite build"
   },
   "dependencies": {
     "react": "^19.0.0",
