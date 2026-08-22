@@ -73,6 +73,19 @@ ul {
   padding: 0 0 0 1.2rem;
 }
 
+/* Accent rule flush with the body text left edge */
+blockquote {
+  margin: 0 0 var(--p-break);
+  padding: 0.1rem 1.5rem 0.1rem 1rem;
+  border-left: 3px solid var(--red);
+  font-style: italic;
+  font-size: 95%;
+}
+
+blockquote > p:last-child {
+  padding-bottom: 0;
+}
+
 /* Styles for inline code or code snippets */
 code,
 pre {
