@@ -1,4 +1,4 @@
-import { Tag } from './Tag';
+import { Tag } from '`./Tag`';
 
 [//]: # 'prettier-ignore'
 [//]: # '@formatter:off'
@@ -21,12 +21,26 @@ ambitious but yet to succeed entrepreneur.
 <section id={"exp"}>
 ## Experience
 
+### Nvidia
+
+<Tag
+  title={'Senior System Engineer'}
+  location={'Vietnam'}
+  time={{ from: '07/2026', to: 'present' }}
+/>
+
+Joint BioNeMo team. Drive the open sourcing [BioIR][bioir] effort.
+
+> Still figuring out what's next...
+
+[bioir]: https://github.com/NVIDIA-BioNeMo/BioNeMo-Inference-Runtime
+
 ### Microsoft
 
 <Tag
   title={'Senior Software Engineer'}
   location={'Vietnam'}
-  time={{ from: '08/2024', to: 'present' }}
+  time={{ from: '08/2024', to: '07/2026' }}
 />
 
 Took part in maintaining the Azure SignalR and Web PubSub services, which allows
@@ -165,6 +179,8 @@ local businesses and the Ho Chi Minh City Communist Youth Union.
 
 Some useful ones among many incompleted or abandoned projects:
 
+- [bang](https://github.com/letientai299/bang): local search engine turning
+  address-bar keywords into shortcuts.
 - [agent-rules](https://github.com/letientai299/agent-rules): opinionated rules
   and workflows for Claude Code.
 - [nvim.conf](https://github.com/letientai299/nvim.conf): full-lua Neovim config
