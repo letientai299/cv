@@ -3,10 +3,21 @@
 Previously built with Latex (see `latex` tag). Now, completely rewrote using web
 tech.
 
-## Misc
+## Run locally
 
-[![Tai's github stats](https://github-readme-stats.vercel.app/api?username=letientai299)](https://github.com/anuraghazra/github-readme-stats)
+Requires [mise][mise], which installs [bun][bun] and runs the tasks.
+
+```sh
+mise install
+bun install
+mise dev      # dev server
+```
+
+Run `mise tasks` for build, preview, lint, format, and PDF generation.
 
 ## License
 
 MIT
+
+[mise]: https://mise.jdx.dev/
+[bun]: https://bun.com/
